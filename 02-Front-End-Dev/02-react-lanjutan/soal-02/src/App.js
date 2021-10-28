@@ -10,11 +10,46 @@ export default function App() {
   const [purchasedItem, setPurchasedItem] = useState(0);
   const [cart, setCart] = useState([]);
 
-  const addToCart = (id) => {};
+  useEffect(() => {
+    setPurchasedItem(cart.reduce((prev, curr) => curr.amount + prev, 0));
+    setTotal(cart.reduce((prev, curr) => curr.amount * curr.price + prev, 0));
+  });
 
-  const decreaseCartAmount = (id) => {};
+  const addToCart = (id) => {
+    const menu = menus.find((i) => i.id === id);
+    const cartById = cart.find((i) => i.id === id);
+    if (!cartById) {
+      setCart([
+        ...cart,
+        {
+          id,
+          name: menu.name,
+          price: menu.price,
+          amount: 1
+        }
+      ]);
+    } else {
+      increaseCartAmount(id);
+    }
+  };
 
-  const increaseCartAmount = (id) => {};
+  const decreaseCartAmount = (id) => {
+    const indexOfCartById = cart.findIndex((i) => i.id === id);
+    const newCart = cart.slice();
+    newCart[indexOfCartById].amount = newCart[indexOfCartById].amount - 1;
+    if (newCart[indexOfCartById].amount <= 0) {
+      setCart(cart.filter((i) => i.id !== id));
+    } else {
+      setCart(newCart);
+    }
+  };
+
+  const increaseCartAmount = (id) => {
+    const indexOfCartById = cart.findIndex((i) => i.id === id);
+    const newCart = cart.slice();
+    newCart[indexOfCartById].amount = newCart[indexOfCartById].amount + 1;
+    setCart(newCart);
+  };
 
   return (
     <div className="bg-secondary">
