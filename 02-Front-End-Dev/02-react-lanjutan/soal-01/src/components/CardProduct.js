@@ -26,7 +26,7 @@ const CardProduct = ({ name, image, price, addToCart }) => {
   );
 };
 
-CardProduct.PropTypes = {
+CardProduct.propTypes = {
   name: PropTypes.string,
   price: PropTypes.number,
   image: PropTypes.string,

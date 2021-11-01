@@ -23,7 +23,7 @@ const CartListItem = ({ name, price, amount, increase, decrease }) => {
   );
 };
 
-CartListItem.PropTypes = {
+CartListItem.propTypes = {
   name: PropTypes.string,
   price: PropTypes.number,
   amount: PropTypes.number,
