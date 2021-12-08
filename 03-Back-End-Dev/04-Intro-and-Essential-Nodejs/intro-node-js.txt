@@ -1,0 +1,26 @@
+1.  Mohon jelaskan apa itu Node.js? Apa perbedannya dengan JavaScript?
+    Node.js merupakan platform untuk menjalankan aplikasi web berbasis JavaScript yang dapat berjalan di backend atau server-side di komputer kita secara langsung.
+    Perbedannya dengan JavaScript:
+    - JavaScript digunakan di front end side sehingga untuk menampilkan hasil eksekusinya hanya bisa dengan menggunakan browser
+    - Node.js dapat menjalankan JavaScript di server side dengan terminal command line
+
+2.  Mohon jelaskan arsitektur dari Node.js?
+    Terdapat dua komponen utama pada Node.js yaitu Engine V8 dan LIBUV Library. 
+    Dengan Engine V8, aplikasi yang berisi file-file JavaScript akan di compile dan dibinging ke Node API.
+    Selanjutnya LIBUV Library akan mengelola operasi asynchronous I/O di Node.js dan event loop. 
+    Pada LIBUV Library ini, semua operasi akan diproses berdasarkan urutan pada Event Queue.
+    Jika ternyata proses operasi masih lama, maka akan diberhentikan terlebih dahulu dan dilanjutkan 
+    ke antrian berikutnya. Kemudian jika sudah selesai, maka callback akan dijalankan.
+
+3.  Apa perbedaan antara Built-in Module, External Module, dan Custom Module pada Node.js?
+    a. Built-in Module merupakan module yang sudah termasuk di dalam Node.js sehingga untuk menggunakannya, kita hanya perlu mengimport dan tidak perlu menginstall module dengan npm
+    b. External Module merupakan module yang sudah disediakan oleh pengguna lain dan tidak termasuk ke dalam Node.js sehingga kita perlu menginstall terlebih dahulu dengan NPM sebelum mengimport
+    c. Custom Module merupakan module yang kita buat sendiri sesuai kebutuhan kita dengan membuat fungsi lalu dieksport dan diimport di file yang membutuhkan
+
+4.  Sebutkan salah satu contoh dari Built-in Module, External Module, dan Custom Module pada Node.js?
+    a. Built-in Module : http, fs, url, util, events
+    b. External Module : moments, express
+    c. Custom Module : 
+        exports.contoh = function() {
+            return "contoh custom module";
+        }
