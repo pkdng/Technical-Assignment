@@ -1,0 +1,42 @@
+1.  Apa perbedaan antara static web server dan dynamic web server?
+    Static web server hanya terdiri dari komputer (hardware) dengan HTTP server (software).
+    Disebut dengan static web server karena server mengirimkan file ke browser yang dihosting
+    apa adanya. Sedangkan Dynamic web server terdiri dari static web server ditambah dengan 
+    software tambahan (biasanya berupa application server dan database). Disebut dengan 
+    dynamic web server karena file yang diperbarui oleh aplikasi server merupakan file yang 
+    sudah dihosting melalui server HTTP sebelum mengirimnya ke browser.
+
+2.  Jelaskan arsitektur static site dan dynamic site
+    Arsitektur static site dimulai dari client side meminta HTTP request yang akan diterima oleh
+    web server dimana didalamnya terdiri dari file seperti html, css, atau javascript. Kemudian
+    responese yang ditampilkan juga berupa file-file yang sudah dikirim tanpa adanya processing
+    data di web server.
+    Sedangkan arsitektur dynamic site dimulai dari client side meminta GET request yang kemudian
+    masuk ke web server. Setelah itu, masuk ke dalam web application untuk dilakukan processing
+    data dari database dan selanjutnya akan dibawa kembali ke web server yang akan melakukan
+    response hingga tampil di dalam browser.
+
+3.  Apa saja yang dapat kita buat pada sisi server?
+    - Membuat proses pengiriman informasi dan penyimpanan lebih efisien
+    - Dapat membuat user experience sesuai dengan kebutuhan
+    - Mengontrol akses ke konten
+    - Menyimpan session maupun state information
+    - Dapat mengirimkan notifikasi dan berkomunikasi
+    - Dapat melakukan analisis data
+
+4.  Mohon jelaskan apa itu RESTful?
+    REST merupakan sebuah gaya arsitektur yang menyediakan standar antara sistem komputer 
+    di dalam web, sehingga memudahkan sistem untuk berkomunikasi satu sama lain. 
+    Sedangkan REST-compliant systems juga dikenal dengan RESTful. RESTful sendiri memiliki ciri
+    sistem yang tergolong stateless dan memisahkan masalah dari klien dan servernya.
+
+5.  Apa saja jenis HTTP verbs yang ada (jelaskan fungsinya masing-masing)
+    - GET, untuk mengambil koleksi atau specific resource (misalkan berdasarkan id)
+    - POST, untuk membuat resource baru
+    - PUT, untuk mengupdate specific resource berdasarkan id
+    - DELETE, untuk menghapus specific resource berdasarkan id
+
+6.  Apa fungsi dari Response Codes?
+    Untuk memberikan response kepada client berupa informasi berdasarkan request yang telah
+    dilakukan dimana setiap response berisi informasi yang berbeda karena status kode yang
+    dibawa juga berbeda. Misalkan status kode 200 berarti OK, 404 berarti NOT FOUND, dan lain-lain.
