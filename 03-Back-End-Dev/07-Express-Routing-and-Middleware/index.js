@@ -82,7 +82,7 @@ route.put('/:id', postChecker, idChecker, (req, res) => {
 
     hewan[index] = update
     res.status(200).send({
-        message : `Success updated data where id = ${index}`,
+        message : `Success updated data where id = ${index+1}`,
         hewan : hewan
     })
 })
