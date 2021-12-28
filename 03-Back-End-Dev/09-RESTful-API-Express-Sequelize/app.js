@@ -1,7 +1,6 @@
 const { sequelize, Hewan } = require('./models/index')
 
 const express = require('express')
-const { json } = require('express/lib/response')
 
 const app = express()
 const port = 3000
@@ -44,6 +43,10 @@ app.get('/hewan/:id', async (req, res) => {
             res.status(200).send({
                 message : "Ok",
                 data    : result
+            })
+        }else {
+            res.status(404).send({
+                message : "Not Found"
             })
         }
     }).catch(err => {
