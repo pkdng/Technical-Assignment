@@ -51,13 +51,13 @@ class CourseController{
                 scheduleDateTime: req.body.scheduleDateTime
             })
 
-            await CourseModel.updateOne({_id : req.params.id}, course)
+            await CourseModel.updateOne({_id : req.params.id}, req.body)
             res.status(200).send({
                 message : "Updated",
                 data : course
             })
         }catch(err){
-            res.status(500).send({message: err})
+            res.status(500).send({message: err.message})
         }
     }
 

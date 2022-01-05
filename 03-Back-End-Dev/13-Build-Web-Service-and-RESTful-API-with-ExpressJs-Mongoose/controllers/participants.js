@@ -53,7 +53,7 @@ class ParticipantController{
                 courses: req.body.courses
             })
 
-            await ParticipantModel.updateOne({_id : req.params.id}, participant)
+            await ParticipantModel.updateOne({_id : req.params.id}, req.body)
             res.status(200).send({
                 message : "Updated",
                 data : participant

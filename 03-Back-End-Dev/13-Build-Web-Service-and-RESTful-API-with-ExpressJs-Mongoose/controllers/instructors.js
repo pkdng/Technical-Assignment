@@ -49,7 +49,7 @@ class InstructorController{
                 location : req.body.location
             })
 
-            await InstructorModel.updateOne({_id : req.params.id}, instructor)
+            await InstructorModel.updateOne({_id : req.params.id}, req.body)
             res.status(200).send({
                 message : "Updated",
                 data : instructor
